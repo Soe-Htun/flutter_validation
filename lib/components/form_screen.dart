@@ -73,22 +73,22 @@ class _FormScreenState extends State<FormScreen> {
     );
   }
 
-  Widget _buildUrl(){
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: 'Url'
-      ),
-      keyboardType: TextInputType.url,
-      validator: (String value){
-        if(value.isEmpty){
-          return 'Url is required';
-        }
-      },
-      onSaved: (String value){
-        _url = value;
-      }
-    );
-  }
+  // Widget _buildUrl(){
+  //   return TextFormField(
+  //     decoration: InputDecoration(
+  //       labelText: 'Url'
+  //     ),
+  //     keyboardType: TextInputType.url,
+  //     validator: (String value){
+  //       if(value.isEmpty){
+  //         return 'Url is required';
+  //       }
+  //     },
+  //     onSaved: (String value){
+  //       _url = value;
+  //     }
+  //   );
+  // }
 
   Widget _buildPhoneNumber(){
     return TextFormField(
@@ -134,20 +134,20 @@ class _FormScreenState extends State<FormScreen> {
         title: Text("Form Demo"),
       ),
       body: Container(
-        margin: EdgeInsets.all(24),
+        // margin: EdgeInsets.all(10),
         child: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget> [
               _buildName(),
               _buildEmail(),
               _buildPassword(),
               _buildPhoneNumber(),
-              _buildUrl(),
+              // _buildUrl(),
               _buildCalories(),
 
-              SizedBox(height: 100),
+              SizedBox(height: 20),
 
               RaisedButton(
                 child: Text("Submit",
@@ -166,7 +166,7 @@ class _FormScreenState extends State<FormScreen> {
                   print(_name);
                   print(_email);
                   print(_password);
-                  print(_url);
+                  // print(_url);
                   print(_phoneNumber);
                   print(_calories);
                 } ,
